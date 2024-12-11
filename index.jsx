@@ -3,21 +3,17 @@ import ReactDOM from 'react-dom/client';
 
 function App() {
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    const formEl = event.currentTarget
-    const formData = new FormData(formEl)
+  function signUp(formData) {
     const email = formData.get("email")
+    const password = formData.get("password")
     console.log(email)
-    // Gather the info from the form
-    // Submit it to a backend
-    formEl.reset()
+    console.log(password)
   }
 
   return (
     <section>
       <h1>Signup form</h1>
-      <form onSubmit={handleSubmit} method="post">
+      <form action={signUp}>
         <label htmlFor="email">Email:</label>
         <input id="email" type="email" name="email" placeholder="joe@schmoe.com" />
         <br />
