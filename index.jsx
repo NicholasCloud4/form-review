@@ -10,12 +10,21 @@ function App() {
    */
 
     function signUp(formData) {
-        const email = formData.get("email")
-        const password = formData.get("password")
-        const employmentStatus = formData.get("employmentStatus")
+        // const email = formData.get("email")
+        // const password = formData.get("password")
+        // const employmentStatus = formData.get("employmentStatus")
+        // const dietaryRestrictions = formData.getAll("dietaryRestrictions")
+        // const favColor = formData.get("favColor")
+        // console.log(favColor)
+
+        console.log(Object.fromEntries(formData))
+        const data = Object.fromEntries(formData)
         const dietaryRestrictions = formData.getAll("dietaryRestrictions")
-        const favColor = formData.get("favColor")
-        console.log(favColor)
+        const allData = {
+            ...data,
+            dietaryRestrictions
+        }
+        console.log(allData)
     }
 
 
